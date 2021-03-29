@@ -1,6 +1,6 @@
 👍推荐 [在线阅读](https://snailclimb.gitee.io/javaguide)  (Github 访问速度比较慢可能会导致部分图片无法刷新出来) 
 
-## 一些闲话：
+书单已经被移动到[awesome-cs-books](https://github.com/CodingDocs/awesome-cs-books) 这个仓库。
 
 > 1. **介绍**：关于 JavaGuide 的相关介绍请看：[关于 JavaGuide 的一些说明](https://www.yuque.com/snailclimb/dr6cvl/mr44yt) 。
 > 2. **PDF版本** ： [《JavaGuide 面试突击版》PDF 版本](#公众号) 。[图解计算机基础 PDF 版](#优质原创PDF资源)。
@@ -235,9 +235,10 @@ CAP 也就是 Consistency（一致性）、Availability（可用性）、Partiti
 
 RPC 让调用远程服务调用像调用本地方法那样简单。
 
-1. [Dubbo 总结：关于 Dubbo 的重要知识点](docs/system-design/distributed-system/rpc/关于Dubbo的重要知识点.md)
-2. [服务之间的调用为啥不直接用 HTTP 而用 RPC？](docs/system-design/distributed-system/rpc/服务之间的调用为啥不直接用HTTP而用RPC.md)
-3. [一款基于 Netty+Kyro+Zookeeper 实现的自定义 RPC 框架](https://github.com/Snailclimb/guide-rpc-framework)
+Dubbo 是一款国产的 RPC 框架，由阿里开源。相关阅读：
+
+- [Dubbo 常见问题总结](docs/system-design/distributed-system/rpc/Dubbo.md)
+- [服务之间的调用为啥不直接用 HTTP 而用 RPC？](docs/system-design/distributed-system/rpc/服务之间的调用为啥不直接用HTTP而用RPC.md)
 
 #### API 网关
 
@@ -265,23 +266,23 @@ RPC 让调用远程服务调用像调用本地方法那样简单。
 
 #### 消息队列
 
-消息队列在分布式系统中主要是为了解耦和削峰。相关阅读： **[消息队列总结](docs/system-design/distributed-system/message-queue/message-queue.md)** 。
+消息队列在分布式系统中主要是为了解耦和削峰。相关阅读： [消息队列常见问题总结](docs/system-design/distributed-system/message-queue/message-queue.md)。
 
 1. **RabbitMQ** : [RabbitMQ 入门](docs/system-design/distributed-system/message-queue/RabbitMQ入门看这一篇就够了.md)
 2. **RocketMQ** : [RocketMQ 入门](docs/system-design/distributed-system/message-queue/RocketMQ.md)、[RocketMQ 的几个简单问题与答案](docs/system-design/distributed-system/message-queue/RocketMQ-Questions.md)
-3. **Kafka** ：[Kafka 常见面试题总结](docs/system-design/distributed-system/message-queue/Kafka常见面试题总结.md)
+3. **Kafka** ：[Kafka 常见问题总结](docs/system-design/distributed-system/message-queue/Kafka常见面试题总结.md)
 
-#### 读写分离
+#### 读写分离&分库分表
 
 读写分离主要是为了将数据库的读和写操作分不到不同的数据库节点上。主服务器负责写，从服务器负责读。另外，一主一从或者一主多从都可以。
 
-**读写分离可以大幅提高读性能，小幅提高写的性能。因此，读写分离更适合单机并发读请求比较多的场景。**
+读写分离可以大幅提高读性能，小幅提高写的性能。因此，读写分离更适合单机并发读请求比较多的场景。
 
-#### 分库分表
+分库分表是为了解决由于库、表数据量过大，而导致数据库性能持续下降的问题。
 
-**分库分表是为了解决由于库、表数据量过大，而导致数据库性能持续下降的问题。** 常见的分库分表工具有：`sharding-jdbc`（当当）、`TSharding`（蘑菇街）、`MyCAT`（基于 Cobar）、`Cobar`（阿里巴巴）...。
+常见的分库分表工具有：`sharding-jdbc`（当当）、`TSharding`（蘑菇街）、`MyCAT`（基于 Cobar）、`Cobar`（阿里巴巴）...。 推荐使用 `sharding-jdbc`。 因为，`sharding-jdbc` 是一款轻量级 `Java` 框架，以 `jar` 包形式提供服务，不要我们做额外的运维工作，并且兼容性也很好。
 
-**推荐使用 `sharding-jdbc`** 。 因为，`sharding-jdbc` 是一款轻量级 `Java` 框架，以 `jar` 包形式提供服务，不要我们做额外的运维工作，并且兼容性也很好。
+相关阅读： [读写分离&分库分表常见问题总结](docs/system-design/读写分离&分库分表.md)
 
 #### 负载均衡
 
@@ -350,11 +351,6 @@ RPC 让调用远程服务调用像调用本地方法那样简单。
 3. [新手学习 Java，有哪些 Java 相关的博客，专栏，和技术学习网站推荐？](docs/questions/java-learning-website-blog.md)
 4. [Java 还是大数据，你需要了解这些东西！](docs/questions/java-big-data.md)
 
-## 书单
-
-1. [Java 基础篇](./docs/books/java基础篇.md)
-2. [计算机基础篇](./docs/books/计算机基础.md)
-
 ---
 
 ## 其他
@@ -367,7 +363,6 @@ RPC 让调用远程服务调用像调用本地方法那样简单。
 
 ### 待办
 
-- [x] Netty 总结
 - [ ] 数据结构总结重构
 
 ### 优质原创PDF资源
