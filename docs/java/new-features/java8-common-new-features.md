@@ -798,6 +798,7 @@ public void newFormat(){
     //format yyyy-MM-dd HH:mm:ss
     LocalDateTime dateTime = LocalDateTime.now();
     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    String dateTimeStr = dateTime.format(dateTimeFormatter);
     System.out.println(String.format("dateTime format : %s", dateTimeStr));
 }
 ```
@@ -898,7 +899,6 @@ public void getDay() {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         //获取当前月第一天：
         Calendar c = Calendar.getInstance();
-        c.add(Calendar.MONTH, 0);
         c.set(Calendar.DAY_OF_MONTH, 1);
         String first = format.format(c.getTime());
         System.out.println("first day:" + first);
@@ -934,7 +934,7 @@ public void getDayNew() {
     //当年最后一天
     LocalDate lastday = today.with(TemporalAdjusters.lastDayOfYear());
     //2021年最后一个周日，如果用Calendar是不得烦死。
-    LocalDate lastMondayOf2021 = LocalDate.parse("2021-12-			       31").with(TemporalAdjusters.lastInMonth(DayOfWeek.SUNDAY));
+    LocalDate lastMondayOf2021 = LocalDate.parse("2021-12-31").with(TemporalAdjusters.lastInMonth(DayOfWeek.SUNDAY));
 }
 ```
 
